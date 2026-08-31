@@ -1,13 +1,16 @@
-def train(net, train_iter, loss, optimier, epochs):
-    num_loss = 0
-    num_y = 0
+def train(net, train_iter, loss, optimizer, epochs):
+    total_loss = 0
+    total_num = 0
     #训练核心部分
-    for epoch in epochs:
+    for epoch in range(epochs):
         for X, y in train_iter:
             y_hat = net(X)
             l = loss(y_hat, y)
-            optimier.zero_grad()
+            optimizer.zero_grad()
             l.backward()
-            optimier.step()
-            # test2
+            optimizer.step()
+
+        total_loss += l.item() * y.numel()
+        total_num += y.numel()
+        print(f'epoch {epoch + 1}, loss {total_loss / total_num:.4f}')
             
