@@ -1,0 +1,8 @@
+pyproject.toml
+src/mydl/__init__.py
+src/mydl/train.py
+src/mydl.egg-info/PKG-INFO
+src/mydl.egg-info/SOURCES.txt
+src/mydl.egg-info/dependency_links.txt
+src/mydl.egg-info/requires.txt
+src/mydl.egg-info/top_level.txt
